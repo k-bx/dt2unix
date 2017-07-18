@@ -1,0 +1,26 @@
+name:                dt2unix
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/githubuser/dt2unix#readme
+license:             BSD3
+author:              Kostiantyn Rybnikov
+maintainer:          Kostiantyn Rybnikov <k-bx@k-bx.com>
+copyright:           2017 Kostiantyn Rybnikov
+category:            Web
+extra-source-files:
+- README.md
+
+dependencies:
+  - base >= 4.7 && < 5
+  - optparse-applicative
+  - time
+
+executables:
+  dt2unix:
+    source-dirs:      src
+    main:             Dt2Unix.hs
+executables:
+  unix2dt:
+    source-dirs:      src
+    main:             Unix2Dt.hs
