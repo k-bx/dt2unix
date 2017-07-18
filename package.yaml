@@ -20,7 +20,6 @@ executables:
   dt2unix:
     source-dirs:      src
     main:             Dt2Unix.hs
-executables:
   unix2dt:
     source-dirs:      src
     main:             Unix2Dt.hs
