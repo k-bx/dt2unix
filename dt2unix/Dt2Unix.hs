@@ -1,6 +1,4 @@
-{-# LANGUAGE TypeApplications #-}
-
-module Main where
+module Main (main) where
 
 import Data.Semigroup ((<>))
 import Data.Time.Clock
@@ -8,7 +6,7 @@ import Data.Time.Format
 import Options.Applicative
 
 data Params = Params
-  { date :: Int
+  { date :: UTCTime
   }
 
 params :: Parser Params
@@ -17,15 +15,12 @@ params =
   option
     auto
     (long "date" <> metavar "DATE" <>
-     help "Date in unix timestamp (seconds). Example: 1477440000")
+     help "Date. Example: 2017-06-14 00:00:00 UTC")
 
 main :: IO ()
 main = do
   ps <- execParser opts
-  putStrLn
-    (show
-       @UTCTime
-       (parseTimeOrError False defaultTimeLocale "%s" (show (date ps))))
+  putStrLn (formatTime defaultTimeLocale "%s" (date ps))
   return ()
   where
     opts =

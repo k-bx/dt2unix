@@ -18,8 +18,8 @@ dependencies:
 
 executables:
   dt2unix:
-    source-dirs:      src
+    source-dirs:      dt2unix
     main:             Dt2Unix.hs
   unix2dt:
-    source-dirs:      src
+    source-dirs:      unix2dt
     main:             Unix2Dt.hs
